@@ -1,8 +1,9 @@
 
 export function BikesIndex(props) {
   return (
-    <div>
+    <div className="Cards">
       <h1>All Bikes</h1>
+      <div id="Cards2">
       {props.bikes.map((bike) => (
         <div key={bike.id}>
           <h2>{bike.name}</h2>
@@ -11,6 +12,7 @@ export function BikesIndex(props) {
           <p>{bike.price}</p>
         </div>
       ))}
+      </div>
     </div>
   );
 }

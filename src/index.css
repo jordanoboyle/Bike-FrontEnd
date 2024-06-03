@@ -1,3 +1,19 @@
 html {
   scroll-behavior: smooth;
 }
+
+#BRB {
+  background-color: red;
+  color: whitesmoke;
+}
+
+#Cards2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.Cards img {
+  width: 300px;
+  height: 300px;
+}

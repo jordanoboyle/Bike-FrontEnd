@@ -1,17 +1,28 @@
 import { BikesIndex } from "./BikesIndex";
-
+import { useState, useEffect } from "react";
+import axios from "axios"
 
 
 export function Content() {
 
-  const bikes = [
-    {id: 1, name: "First Bike", brand: "Trek", price: 5500, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkEvlWiH9AaWOFbRkGZx56uYJ68xYBmWByRQ&s"},
-    {id: 2, name: "Second Bike", brand: "Cannondale", price: 7500, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfqycvdlfXUmUPE6ok-7-najC881fvnrA0Yw&s"},
-  ]
+  const [bikes, setBikes] = useState([]);
+ 
+  const handleIndexBikes = () => {
+    console.log("handling the bike index");
+    axios.get("http://localhost:3000/bikes.json").then((response) => {
+      console.log(response.data);
+      setBikes(response.data);
+    })
+  }
+
+  useEffect(handleIndexBikes, []);
 
   return (
     <main>
       <h1>Welcome to React!</h1>
+      <button id="BRB" title="Press" onClick={handleIndexBikes}>
+        Big Red Button
+      </button>
       <BikesIndex bikes={bikes}/>
     </main>
   )
