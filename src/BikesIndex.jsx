@@ -10,6 +10,7 @@ export function BikesIndex(props) {
           <img src={bike.image_url} />
           <p>{bike.brand}</p>
           <p>{bike.price}</p>
+          <button onClick={() => props.onShowBike(bike)}>DETAILS</button>
         </div>
       ))}
       </div>
