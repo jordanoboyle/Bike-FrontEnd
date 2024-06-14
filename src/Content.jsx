@@ -1,7 +1,6 @@
 import { BikesIndex } from "./BikesIndex";
 import { BikesShow } from "./BikesShow";
 import { BikeNew } from "./BikeNew";
-import { BikeUpdate } from "./BikeUpdate";
 import { useState, useEffect } from "react";
 import { Modal } from "./Modal";
 import axios from "axios"
