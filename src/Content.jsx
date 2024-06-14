@@ -1,6 +1,7 @@
 import { BikesIndex } from "./BikesIndex";
 import { BikesShow } from "./BikesShow";
 import { BikeNew } from "./BikeNew";
+import { BikeUpdate } from "./BikeUpdate";
 import { useState, useEffect } from "react";
 import { Modal } from "./Modal";
 import axios from "axios"
@@ -53,8 +54,9 @@ export function Content() {
       <br/>
       <BikesIndex bikes={bikes} onShowBike={handleShowBike}/>
       <Modal show={isBikesShowVisible} onClose={handleClose}>
-        <h1>SHOW ME THE MODAL</h1>
+        <h1>Detailed Information</h1>
         <BikesShow bike={currentBike}/>
+        <BikeUpdate />
       </Modal>
     </main>
   )
