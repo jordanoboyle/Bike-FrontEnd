@@ -56,7 +56,6 @@ export function Content() {
       <Modal show={isBikesShowVisible} onClose={handleClose}>
         <h1>Detailed Information</h1>
         <BikesShow bike={currentBike}/>
-        <BikeUpdate />
       </Modal>
     </main>
   )
