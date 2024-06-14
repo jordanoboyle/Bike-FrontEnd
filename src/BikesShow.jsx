@@ -1,4 +1,5 @@
 import { BikeUpdate } from "./BikeUpdate"
+import { BikeDelete } from "./BikeDelete"
 
 export function BikesShow(props) {
   return (
@@ -10,7 +11,12 @@ export function BikesShow(props) {
       <p>Price: {props.bike.price}</p>
       <br/>
       <br/>
-      <BikeUpdate bike={props.bike}/>
+      <div>
+        <BikeUpdate bike={props.bike} />
+        <br/>
+        <br/>
+        <BikeDelete bike={props.bike} />
+      </div>
     </div>
   )
 }

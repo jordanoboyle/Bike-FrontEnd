@@ -6,6 +6,7 @@ export function BikesIndex(props) {
       <div id="Cards2">
       {props.bikes.map((bike) => (
         <div key={bike.id}>
+          <p>{bike.id}</p>
           <h2>{bike.name}</h2>
           <img src={bike.image_url} />
           <p>{bike.brand}</p>
