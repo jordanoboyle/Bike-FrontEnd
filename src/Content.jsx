@@ -1,5 +1,6 @@
 import { BikesIndex } from "./BikesIndex";
 import { BikesShow } from "./BikesShow";
+import { BikeNew } from "./BikeNew";
 import { useState, useEffect } from "react";
 import { Modal } from "./Modal";
 import axios from "axios"
@@ -29,11 +30,22 @@ export function Content() {
     setIsBikesShowVisible(false)
   }
 
+  const handCreateBike = (theParams, successCallback) => {
+    console.log(theParams, "creating the bike");
+    axios.post("http://localhost:3000/bikes.json", theParams).then((response) => {
+      console.log(response.data);
+      setBikes([...bikes, response.data])
+      successCallback();
+    })
+  }
+
   useEffect(handleIndexBikes, []);
 
   return (
     <main>
       <h1>Welcome to React!</h1>
+      <br/>
+      <BikeNew onNewBike={handCreateBike} />
       <br/>
       <button id="BRB" title="Press" onClick={handleIndexBikes}>
         Big Red Button
